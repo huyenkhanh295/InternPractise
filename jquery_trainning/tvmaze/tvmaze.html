@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+          <input class="input-control" type="text" name="input-search" id="input-search" placeholder="Search show by name..." />
+          <button class="btn btn-submit" type="submit">Search</button>
+        </div>
+        <div class="list-result"></div>
+        <div class="show-information display-none">
+            <button class="btn btn-back">Back</button>
+            <h1 class="show-name"></h1>
+            <nav class="nav-menu">
+              <ul>
+                <li><a class="menu-item active" href="#" title="main">Main</a></li>
+                <li><a class="menu-item" href="#" title="cast">Cast</a></li>
+                <li><a class="menu-item" href="#" title="crew">Crew</a></li>
+                <li><a class="menu-item" href="#" title="gallery">Gallery</a></li>
+              </ul>
+            </nav>
+            <div class="content main-content">
+              <div class="general">
+                <div class="image-field">
+                  <img class="show-image">
+                </div>
+                <div class="show-description"></div>
+              </div>
+              <div class="show-info">
+                <h2 class="text">Show Info</h2>
+                <div class="detail-list"></div>
+                <div class="rating">
+                  <div class="rating-bar">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                  <span class="rating-result"></span>
+                </div>
+              </div>
+            </div>
+            <div class="content cast-content display-none"></div>
+            <div class="content crew-content display-none"></div>
+            <div class="content gallery-content display-none"></div>
+          </div>
+    </div>
+</body>
+</html>

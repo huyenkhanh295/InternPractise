@@ -1,0 +1,56 @@
+The Basics of jQuery
+What is jQuery?
+Why do we need to use jQuery?
+How to use jQuery for Animation?
+
+
+CSS Selectors in jQuery
+Traversal Methods: https://api.jquery.com/category/traversing/
+
+     3) DOM Manipulation with jQuery
+CSS
+animate() and Animation Convenience Methods
+Attributes and Properties
+text() and html()
+Removing Elements from the DOM
+Creating New Elements
+Inserting into the DOM
+
+4) Events
+https://api.jquery.com/category/events/
+What’s the Event in Javascript?
+Trigger events
+Unbinding from Events
+Event Object
+Event Delegation
+Event Propagation
+Preventing Default Behavior
+
+Practice: Write a slider with jQuery
+Practice: Writing image lazy loading
+
+5) Ajax with jQuery
+JSON
+Parsing JSON in JavaScript
+What is the CORS issue?
+Practice: TVMAZE API
+http://www.tvmaze.com
+API: https://www.tvmaze.com/api
+From this site, get information on a TV show or a movie with Ajax
+
+6) jQuery Plugin
+What is the jQuery Plugin
+Create a Plugin for TVMAZE API
+Create a jQuery Plugin for Image Lazy loading above
+Create a jQuery Plugin for Image Slider above
+
+7) What is the jQuery Widget?
+
+8) What is the Cookie and Local Storage? How to use them? What are the limits? Please, give examples on how to use Cookie and Local Storage.
+
+Practice: Writing a shopping cart using Local Storage. For example, https://github.com/learnable-content/js-shopping-cart
+
+Practice:
+Create a database with tables: students(id, maso, name)
+Using Ajax to Show, Create, Delete and Update students.
+Login Form for students.

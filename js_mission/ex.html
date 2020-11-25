@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-title {
+        text-align: center;
+      }
+      .mission {
+        margin-top: 20px;
+      }
+      .mission-input {
+        width: 200px;
+      }
+      .mission-title {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="main-title">MISSION POSSIBLE</h2>
+      <div class="mission">
+        <div class="mission-title">
+          1. The first mission is called Long Repeat and here you need to find
+          the length of the longest substring that consists of the same letter.
+        </div>
+        <pre>
+            longRepeat('sdsffffse') == 4
+            longRepeat('ddvvrwwwrggg') == 3
+        </pre>
+        <div class="mission-form">
+          <label for="mission-1">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-1"
+            id="input-mission-1"
+            placeholder="Enter a string"
+          />
+          <input type="button" value="Submit" id="submit-mission-1" />
+          <div id="result-1">Result:</div>
+        </div>
+      </div>
+      <div class="mission">
+        <div class="mission-title">
+          2. The second is Roman Numerals where you have to return a roman
+          numeral using the specified integer value.
+        </div>
+        <pre>
+            romanNumerals(1) == 'I'
+            romanNumerals(10) == 'X'
+            romanNumerals(50) == 'L'
+            romanNumerals(100) == 'C'
+            romanNumerals(500) == 'D'
+            romanNumerals(76) == 'LXXVI'
+        </pre>
+        <div class="mission-form">
+          <label for="mission-2">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-2"
+            id="input-mission-2"
+            placeholder="Enter a positive number"
+          />
+          <input type="button" value="Submit" id="submit-mission-2" />
+          <div id="result-2">Result:</div>
+        </div>
+      </div>
+      <div class="mission">
+        <div class="mission-title">
+          3. The third is the Reverse Roman Numerals mission where your task is
+          to convert a given Roman number into its decimal representation.
+        </div>
+        <pre>
+            reverse_roman('VI') == 6
+            reverse_roman('LXXVI') == 76
+            reverse_roman('CDXCIX') == 499
+            reverse_roman('MMMDCCCLXXXVIII') == 3888
+        </pre>
+        <div class="mission-form">
+          <label for="mission-3">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-3"
+            id="input-mission-3"
+            placeholder="Enter a Roman number"
+          />
+          <input type="button" value="Submit" id="submit-mission-3" />
+          <div id="result-3">Result:</div>
+        </div>
+      </div>
+      <div class="mission">
+        <div class="mission-title">
+          4. The mission is called Fizz Buzz where you have to write a function
+          which returns a particular answer when fulfilling specified
+          conditions.
+        </div>
+        <pre>
+            fizzBuzz(15) == "Fizz Buzz"
+            fizzBuzz(6) == "Fizz"
+            fizzBuzz(5) == "Buzz"
+            fizzBuzz(7) == "7"
+        </pre>
+        <div class="mission-form">
+          <label for="mission-4">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-4"
+            id="input-mission-4"
+            placeholder="Enter a number"
+          />
+          <input type="button" value="Submit" id="submit-mission-4" />
+          <div id="result-4">Result:</div>
+        </div>
+      </div>
+      <div class="mission">
+        <div class="mission-title">
+          5. The fifth mission is Cut Sentence and here you need to truncate a
+          sentence to a length corresponding to the given number of characters.
+        </div>
+        <pre>
+            cutSentence("Hi my name is Alex", 4) == "Hi..."
+            cutSentence("Hi my name is Alex", 8) == "Hi my..."
+            cutSentence("Hi my name is Alex", 18) == "Hi my name is Alex"
+            cutSentence("Hi my name is Alex", 20) == "Hi my name is Alex"
+        </pre>
+        <div class="mission-form">
+          <label for="mission-5">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-5"
+            id="input-mission-5-sentence"
+            placeholder="Enter a sentence"
+          />
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-5"
+            id="input-mission-5-length"
+            placeholder="Enter a length"
+          />
+          <input type="button" value="Submit" id="submit-mission-5" />
+          <div id="result-5">Result:</div>
+        </div>
+      </div>
+      <div class="mission">
+        <div class="mission-title">
+          6. The sixth mission is called Bigger Together where you must find a
+          difference between the maximally positive and maximally negative
+          numbers.
+        </div>
+        <pre>
+            biggerTogether([1,2,3,4]) == 3087 // 4321 - 1234
+            biggerTogether([1,2,3,4, 11, 12]) == 32099877 // 43212111 - 11112234
+            biggerTogether([0, 1]) == 9 // 10 - 01
+            biggerTogether([100]) == 0 // 100 - 100
+        </pre>
+        <div class="mission-form">
+          <label for="mission-6">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-6"
+            id="input-mission-6"
+            placeholder="Enter a list of positive number"
+          />
+          <input type="button" value="Submit" id="submit-mission-6" />
+          <div id="result-6">Result:</div>
+        </div>
+      </div>
+      <div class="mission">
+        <div class="mission-title">
+          7. The seventh mission is Best Stock and here you need to find out
+          which stocks from given stock prices cost more.
+        </div>
+        <pre>
+            bestStock({'ATX': 390.2,
+            'CAC': 10.0,
+            'WIG': 1.2}) == 'ATX'
+            bestStock({'ATX': 1.01,
+            'CAC': 91.1,
+            'TASI': 120.9}) == 'TASI'
+        </pre>
+        <div class="mission-form">
+          <label for="mission-7">Input:</label>
+          <input
+            type="text"
+            class="mission-input"
+            name="mission-7"
+            id="input-mission-7"
+            placeholder="Enter a dictionary of stock"
+          />
+          <input type="button" value="Submit" id="submit-mission-7" />
+          <div id="result-7">Result:</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // ex-1
+      document.getElementById('submit-mission-1').onclick = () => {
+        let result = longRepeat(
+          document.getElementById('input-mission-1').value
+        );
+        document.getElementById('result-1').innerText = `Result: ${result}`;
+      };
+
+      document.getElementById('submit-mission-2').onclick = () => {
+        let result = romanNumerals(
+          document.getElementById('input-mission-2').value
+        );
+        document.getElementById('result-2').innerText = `Result: ${result}`;
+      };
+
+      document.getElementById('submit-mission-3').onclick = () => {
+        let result = reverseRoman(
+          document.getElementById('input-mission-3').value
+        );
+        document.getElementById('result-3').innerText = `Result: ${result}`;
+      };
+
+      document.getElementById('submit-mission-4').onclick = () => {
+        let result = fizzBuzz(document.getElementById('input-mission-4').value);
+        document.getElementById('result-4').innerText = `Result: ${result}`;
+      };
+
+      document.getElementById('submit-mission-5').onclick = () => {
+        let result = cutSentence(
+          document.getElementById('input-mission-5-sentence').value,
+          document.getElementById('input-mission-5-length').value
+        );
+        document.getElementById('result-5').innerText = `Result: ${result}`;
+      };
+
+      document.getElementById('submit-mission-6').onclick = () => {
+        let result = biggerTogether(
+          document.getElementById('input-mission-6').value
+        );
+        document.getElementById('result-6').innerText = `Result: ${result}`;
+      };
+
+      document.getElementById('submit-mission-7').onclick = () => {
+        let result = bestStock(
+          document.getElementById('input-mission-7').value
+        );
+        document.getElementById('result-7').innerText = `Result: ${result}`;
+      };
+
+      //ex-1
+      function longRepeat(arr) {
+        if (arr == '') return 0;
+        longest_str = 1;
+        result = 1;
+        for (let i = 1; i <= arr.length; i++) {
+          if (arr[i - 1] == arr[i]) longest_str += 1;
+          else longest_str = 1;
+
+          if (longest_str > result) result = longest_str;
+        }
+        return result;
+      }
+      // end ex-1
+
+      //   ex-2
+      function romanNumerals(num) {
+        const roman = [
+          [1000, 'M'],
+          [900, 'CM'],
+          [500, 'D'],
+          [400, 'CD'],
+          [100, 'C'],
+          [90, 'XC'],
+          [50, 'L'],
+          [40, 'XL'],
+          [10, 'X'],
+          [9, 'IX'],
+          [5, 'V'],
+          [4, 'IV'],
+          [1, 'I'],
+        ];
+        if (num <= 0 || num >= 4000) {
+          return '';
+        }
+
+        for (var i = 0; i < roman.length; i++) {
+          if (num >= roman[i][0]) {
+            return roman[i][1] + romanNumerals(num - roman[i][0]);
+          }
+        }
+      }
+      // end ex-2
+
+      // ex-3
+      function reverseRoman(str) {
+        var arr = {
+          I: 1,
+          V: 5,
+          X: 10,
+          L: 50,
+          C: 100,
+          D: 500,
+          M: 1000,
+        };
+        var result = 0;
+
+        for (var i = 0; i < str.length; i++) {
+          if (
+            str.charAt(i + 1) != undefined &&
+            arr[str.charAt(i)] < arr[str.charAt(i + 1)]
+          ) {
+            result -= arr[str.charAt(i)];
+          } else {
+            result += arr[str.charAt(i)];
+          }
+        }
+        return result;
+      }
+      //end ex-3
+
+      // ex-4
+      function fizzBuzz(number) {
+        if (number > 0 && number <= 1000) {
+          if (number % 3 == 0 && number % 5 == 0) return 'Fizz Buzz';
+          else if (number % 3 == 0) return 'Fizz';
+          else if (number % 5 == 0) return 'Buzz';
+          else return number.toString();
+        } else return 'Wrong input! The number must be between 1 and 1000';
+      }
+      // end ex-4
+
+      // ex-5
+      function cutSentence(sentence, length) {
+        if (sentence.length > 79) {
+          return 'The length of sentence must be less than 80 characters!';
+        } else {
+          sentence = sentence.replace(/\s+/g, ' ').trim();
+          alert(sentence);
+          if (length >= sentence.length) return sentence;
+          else {
+            if (
+              sentence.charAt(length - 1) == ' ' ||
+              sentence.charAt(length) == ' '
+            )
+              return sentence.substr(0, length).trim();
+            else {
+              let index = sentence.substring(0, length - 1).lastIndexOf(' ');
+              let result = sentence.substring(0, index) + '...';
+              return result;
+            }
+          }
+        }
+      }
+      // end ex-5
+
+      //ex-6
+      function biggerTogether(numArr) {
+        numArr = JSON.parse(numArr);
+        let arr = [];
+        let numMax = '';
+        let numMin = '';
+        if (numArr.length == 0) {
+          return 'Wrong input!';
+        }
+        for (let num of numArr) {
+          if (isNaN(num) || num < 0) {
+            return 'Wrong input!';
+          }
+          arr.push(num.toString());
+        }
+        numMin = arr
+          .sort((a, b) => {
+            return parseInt(a + b) - parseInt(b + a);
+          })
+          .join('');
+        numMax = arr
+          .sort((a, b) => {
+            return parseInt(a + b) - parseInt(b + a);
+          })
+          .reverse()
+          .join('');
+        console.log(numMax);
+        console.log(numMin);
+        return numMax - numMin;
+      }
+      //   end ex-6
+
+      // ex-7
+      function bestStock(obj) {
+        obj = obj.replace(/'/g, '"');
+        obj = JSON.parse(obj);
+        let max = 0;
+        let result;
+        for (key in obj) {
+          if (max < obj[key]) {
+            max = obj[key];
+            result = key;
+          }
+        }
+        return result;
+      }
+      // end ex-7
+    </script>
+  </body>
+</html>

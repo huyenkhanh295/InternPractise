@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .flex-container {
+        min-width: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem 1em;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .card {
+        border: 1px solid silver;
+      }
+
+      .card-header {
+        color: white;
+        padding: 1.5rem 0;
+      }
+
+      .header {
+        margin: 0;
+      }
+
+      .title,
+      .unit {
+        text-transform: uppercase;
+      }
+
+      .title {
+        letter-spacing: 0.3em;
+      }
+
+      .unit {
+        color: silver;
+      }
+
+      .price {
+        font-size: 5rem;
+      }
+
+      .card-1 .card-header {
+        background-color: rgb(18, 153, 18);
+      }
+
+      .card-2 .card-header {
+        background-color: rgb(23, 23, 156);
+      }
+
+      .card-3 .card-header {
+        background-color: black;
+      }
+
+      .card-body {
+        background-color: rgb(233, 233, 233);
+      }
+
+      .card-item {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .item {
+        line-height: 2rem;
+        border-bottom: 1px solid silver;
+        padding: 0 2rem;
+      }
+
+      .card-footer {
+        margin: 1.2rem;
+      }
+
+      .btn {
+        border-radius: 30px;
+        border: 1px solid silver;
+        font-weight: bold;
+        background-color: white;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="card card-1">
+        <div class="card-header">
+          <p class="header title">personal</p>
+          <p class="header price">$5</p>
+          <p class="header unit">per month</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-item">
+            <li class="item">Free setup</li>
+            <li class="item">Custom sub-domain</li>
+            <li class="item">Standard customer support</li>
+            <li class="item">1GB file storage</li>
+            <li class="item">1 database</li>
+            <li class="item">Unlimited bandwidth</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button class="btn">Choose</button>
+        </div>
+      </div>
+      <div class="card card-2">
+        <div class="card-header">
+          <p class="header title">enterprise</p>
+          <p class="header price">$25</p>
+          <p class="header unit">per month</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-item">
+            <li class="item">Free setup</li>
+            <li class="item">Use your own domain</li>
+            <li class="item">Standard customer support</li>
+            <li class="item">10GB file storage</li>
+            <li class="item">5 database</li>
+            <li class="item">Unlimited bandwidth</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button class="btn">Choose</button>
+        </div>
+      </div>
+      <div class="card card-3">
+        <div class="card-header">
+          <p class="header title">enterprise</p>
+          <p class="header price">$45</p>
+          <p class="header unit">per month</p>
+        </div>
+        <div class="card-body">
+          <ul class="card-item">
+            <li class="item">Free setup</li>
+            <li class="item">Use your own domain</li>
+            <li class="item">Premium customer support</li>
+            <li class="item">Unlimited file storage</li>
+            <li class="item">25 database</li>
+            <li class="item">Unlimited bandwidth</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <button class="btn">Choose</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

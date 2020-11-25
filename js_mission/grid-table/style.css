@@ -1,0 +1,118 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.customer-info-table {
+  width: 100%;
+}
+
+.pagination {
+  margin-top: 6px;
+}
+
+.customer-info-table {
+  width: 100%;
+}
+
+.customer-info-table,
+.table-header,
+.col {
+  border: 1.5px solid rgb(235, 235, 235);
+  border-collapse: collapse;
+}
+
+.table-header,
+.col {
+  padding: 5px;
+}
+
+.row-header {
+  background-color: rgb(245, 244, 244);
+}
+
+.table-header {
+  font-weight: bold;
+  text-align: center;
+}
+.icon-edit {
+  color: rgb(32, 137, 223);
+}
+
+.icon-confirm {
+  color: yellowgreen;
+}
+
+.icon-cancel,
+.icon-delete {
+  color: red;
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.icon-sort {
+  color: rgb(21, 214, 21);
+}
+
+.input-control {
+  border: 1px solid #636365;
+  border-radius: 3px;
+  width: 100%;
+  padding: 5px 0px;
+  text-indent: 8px;
+  /* text-align: center; */
+}
+
+
+.table-body .row:nth-child(odd) {
+  background-color: rgb(250, 250, 250);
+}
+
+.col-age {
+  text-align: right;
+  width: 8%;
+}
+
+.col-country,
+.col-is-married,
+.col-action {
+  text-align: center;
+}
+
+.col-action {
+  width: 8%;
+}
+
+.col-header:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.row,
+.icon,
+a,
+.col-header {
+  cursor: pointer;
+}
+
+.row:hover {
+  background-color: rgb(226, 226, 226) !important;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 8px;
+  color: skyblue;
+}
+
+a:hover,
+a:active {
+  color: black;
+}

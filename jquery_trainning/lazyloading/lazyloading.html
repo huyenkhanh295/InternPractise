@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <style>
+    img.lazy {
+      width: 400px;
+      height: 300px;
+      display: block;
+      margin: auto;
+      padding: 2px;
+    }
+  </style>
+  <script>
+    (function ($) {
+      $.fn.lazyLoadImg = function () {
+        let list = function () {
+          for (let i = 1, len = $('img').length; i<= len;i++ ) {
+              let img = $(`img:nth-child(${i})`)
+              let offsetTop = img.offset().top;
+            if (offsetTop < window.innerHeight + window.pageYOffset) {
+              img.attr('src', img.attr('data-src'));
+            }
+          }
+        };
+        list();
+        window.onscroll = function () {
+           list();
+        };
+      };
+    })(jQuery);
+    $(function () {
+      $('.container').lazyLoadImg();
+    });
+  </script>
+  <body>
+    <div class="container">
+      <img
+        class="lazy"
+        data-src="https://pethealth.vn/wp-content/uploads/2018/04/trieu-chung-benh-giam-bach-cau-o-meo.jpg"
+      />
+      <img
+        class="lazy"
+        data-src="http://img-2.onedio.com/img/2r1/54d2951ed65c41f831fbbb36.jpg"
+      />
+      <img
+        class="lazy"
+        data-src="http://animal.vn/wp-content/uploads/2017/06/meo-cung-01.jpg"
+      />
+      <img
+        class="lazy"
+        data-src="https://yeupet.info/wp-content/uploads/2019/06/meo-muop.jpg"
+      />
+      <img
+        class="lazy"
+        data-src="https://th.bing.com/th/id/OIP.Fu5y2tB1xXhSNQwvzsnACAHaEK?pid=Api&rs=1"
+      />
+      <img
+        class="lazy"
+        data-src="https://br-art.vn/wp-content/uploads/2018/01/bo-anh-phong-canh-la-mat-cua-nag-tam-do-10.jpg"
+      />
+      <img
+        class="lazy"
+        data-src="https://247wallst.files.wordpress.com/2019/10/imageforentry3-hq4.jpg?w=645&h=363"
+      />
+      <img
+        class="lazy"
+        data-src="https://th.bing.com/th/id/OIP.uDU1EQEOTZsVNliuYEGM4wHaEK?pid=Api&w=640&h=360&rs=1"
+      />
+      <img
+        class="lazy"
+        data-src="https://images.fineartamerica.com/images-medium-large-5/trunk-bay-st-john-us-virgin-islands-justin-bittner.jpg"
+      />
+      <img
+        class="lazy"
+        data-src="http://img.saobiz.net/d/2015/07/tai-hinh-anh-nen-phong-canh-dep-4.jpg"
+      />
+    </div>
+  </body>
+</html>

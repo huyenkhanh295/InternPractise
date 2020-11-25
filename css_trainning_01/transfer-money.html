@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tranfer Money Form</title>
+    <style>
+      body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(40, 46, 51);
+}
+
+.container {
+  margin: 0 auto;
+  color: white;
+  width: fit-content;
+}
+
+.section {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: rgba(53, 74, 77, 0.733);
+  border-radius: 0.5rem;
+}
+
+.money-transfer-method {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.user-info {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.row {
+  box-sizing: border-box;
+}
+.col {
+  display: inline-block;
+}
+
+.col-1 {
+  width: 220px;
+}
+
+.row-2 {
+  margin-top: 1rem;
+}
+
+.desc {
+  text-align: right;
+  color: rgb(127, 201, 16);
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.symbol {
+  font-size: 0.75rem;
+  border-radius: 50%;
+  border: 1.5px solid rgb(127, 201, 16);
+  padding: 0px 3px;
+  margin-bottom: -2px;
+}
+
+.select-control {
+  width: 350px;
+  background-color: #e9ebeb;
+  color: rgb(127, 201, 16);
+  padding: 0.5rem 3rem 0.5rem 0.5rem;
+  border-radius: 6px;
+  outline: none;
+  font-weight: bold;
+}
+
+.steps {
+  width: 100%;
+  margin: -40px auto 40px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm,
+.auth {
+  text-align: center;
+}
+
+.result {
+  text-align: right;
+}
+
+.num {
+  padding-bottom: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: #dfdfdf;
+  background-color: #3d6262;
+  border-radius: 50%;
+  min-width: 20px;
+  border: 2px solid #8C9E9D;
+}
+
+.step-num {
+  margin-bottom: 10px;
+}
+
+.active .num {
+  background: rgb(127, 201, 16);
+  border-color: rgb(127, 201, 16);
+}
+
+.step {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0;
+}
+
+.process-bar {
+  width: 100%;
+  height: 1px;
+  z-index: -1;
+  display: block;
+    border: 0;
+    border-top: 3px solid #3C5958;
+    margin-top: 35px;
+    padding: 0; 
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <hr class="process-bar">
+      <div class="steps">
+        <ul class="step">
+          <li class="step-num init active"><span class="num">1</span></li>
+          <li>Khởi tạo</li>
+        </ul>
+        <ul class="step">
+          <li class="step-num confirm"><span class="num">2</span></li>
+          <li>Xác nhận</li>
+        </ul>
+        <ul class="step">
+          <li class="step-num auth"><span class="num">3</span></li>
+          <li>Xác thực</li>
+        </ul>
+        <ul class="step">
+          <li class="step-num result"><span class="num">4</span></li>
+          <li>Kết quả</li>
+        </ul>
+      </div>
+      <form id="transfer-form" class="transfer-form" action="/" enctype="multipart/form-data" method="POST">
+        <div class="section money-transfer-method">
+          <div class="row">
+            <div class="col col-1">
+              <label for="transfer">Hình thức chuyển</label>
+            </div>
+            <div class="col col-2">
+              <select class="select-control" name="transfer" id="transfer">
+                <option value="1">Chuyển tiền ngày giá trị hiện tại</option>
+                <option value="2">Chuyển tiền cách thứ 2</option>
+                <option value="3">Chuyển tiền cách thứ 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="desc">
+          <span>Mô tả và một số lưu ý đối với tính năng chuyển tiền</span>
+          <span class="symbol">?</span>
+        </div>
+        <div class="section user-info">
+          <div class="row row-1">
+            <div class="col col-1">
+              <label for="account">Tài khoản nguồn</label>
+            </div>
+            <div class="col col-2">
+              <select class="select-control" name="account" id="account">
+                <option value="1">99999999999999999 - VND</option>
+                <option value="2">92992919212121211 - VND</option>
+                <option value="3">89898989898989898 - VND</option>
+              </select>
+            </div>
+          </div>
+          <div class="row row-2">
+            <div class="col col-1">Số dư khả dụng</div>
+            <div class="col col-2">1,112,425,641 VND</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Menu</title>
+    <style>
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        line-height: 2rem;
+        margin: 0;
+      }
+
+      .container{
+        min-width: 300px;
+        max-width: 600px;
+      }
+      .table,
+      .row {
+        list-style-type: none;
+      }
+
+      .table {
+        display: table;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: solid 1px lightgray;
+      }
+
+      .col {
+        display: table-cell;
+      }
+
+      .col:not(:first-child) {
+        border-left: solid 1px lightgray;
+      }
+
+      .col-title {
+        font-weight: bold;
+        background-color: rgb(184, 184, 184);
+      }
+      
+      .col-title-num,.col-title-year{
+        text-align: center;
+      }
+
+      .col-title-make,.col-title-model{
+        text-indent: 1rem;
+      }
+
+      .row {
+        width: 100%;
+        display: inline-table;
+        margin: 0;
+        padding: 0;
+      }
+
+      .item {
+        display: table-row;
+        width: 100%;
+      }
+
+      .item:nth-child(odd) {
+        background-color: rgb(233, 233, 233);
+      }
+
+      .row-num,
+      .row-year {
+        text-align: center;
+      }
+
+      .row-make,
+      .row-model {
+        text-indent: 1rem;
+      }
+
+      .col-title-num{
+        padding-left: 3px;
+        padding-right: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="table">
+        <li class="col">
+          <div class="col-title col-title-num">#</div>
+          <ul class="row row-num">
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+            <li class="item">6</li>
+            <li class="item">7</li>
+            <li class="item">8</li>
+          </ul>
+        </li>
+        <li class="col">
+          <div class="col-title col-title-make">Make</div>
+          <ul class="row row-make">
+            <li class="item">Honda</li>
+            <li class="item">Toyota</li>
+            <li class="item">Hyundai</li>
+            <li class="item">Ford</li>
+            <li class="item">Nissan</li>
+            <li class="item">BMW</li>
+            <li class="item">Honda</li>
+            <li class="item">Kia</li>
+          </ul>
+        </li>
+        <li class="col">
+          <div class="col-title col-title-model">Model</div>
+          <ul class="row row-model">
+            <li class="item">Accord</li>
+            <li class="item">Camry</li>
+            <li class="item">Elantra</li>
+            <li class="item">Focus</li>
+            <li class="item">Sentra</li>
+            <li class="item">M3</li>
+            <li class="item">Civic</li>
+            <li class="item">Soul</li>
+          </ul>
+        </li>
+        <li class="col">
+          <div class="col-title col-title-year">Year</div>
+          <ul class="row row-year">
+            <li class="item">2009</li>
+            <li class="item">2012</li>
+            <li class="item">2010</li>
+            <li class="item">2008</li>
+            <li class="item">2011</li>
+            <li class="item">2009</li>
+            <li class="item">2010</li>
+            <li class="item">2010</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

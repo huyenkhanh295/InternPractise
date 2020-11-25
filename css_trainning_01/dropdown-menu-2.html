@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Menu</title>
+    <style>
+      .menu-dropdown {
+        padding: 0;
+        margin: 0;
+        background-color: orange;
+        position: relative;
+        display: inline-block;
+      }
+
+      .level-0 {
+        background-color: orange;
+        color: white;
+        padding: 16px;
+        list-style-type: none;
+        float: left;
+        cursor: pointer;
+      }
+
+      .dropdown-content {
+        padding-left: 0;
+        background-color: orange;
+        width: 100px;
+        display: none;
+        position: absolute;
+        z-index: 1;
+        margin-top: 16px;
+        margin-left: -16px;
+        width: 116px;
+      }
+
+      .level-1 {
+        display: contents;
+        padding: inherit;
+      }
+
+      .level-1 .menu-title {
+        padding: 16px 0 16px 16px;
+        display: block;
+      }
+
+      .menu-title{
+        color: white;
+        text-decoration: none;
+      }
+      .menu-title:hover {
+        background-color: red;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .item:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu-dropdown">
+      <li class="item level-0">
+        <a class="menu-title" href="#" title="One">One</a>
+      </li>
+      <li class="item level-0 dropdown">
+        <a href="#" class="menu-title" title="Two">Two</a>
+        <ul class="dropdown-content">
+          <li class="item level-1">
+            <a class="menu-title" href="#" title="Sub-1">Sub-1</a>
+          </li>
+          <li class="item level-1">
+            <a class="menu-title" href="#" title="Sub-2">Sub-2</a>
+          </li>
+          <li class="item level-1">
+            <a class="menu-title" href="#" title="Sub-3">Sub-3</a>
+          </li>
+        </ul>
+      </li>
+      <li class="item level-0">
+        <a class="menu-title" href="#" title="Three">Three</a>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        padding: 1.5rem;
+        line-height: 2rem;
+        width: fit-content;
+        background-color: rgb(41, 53, 53);
+        overflow: scroll;
+        height: 300px;
+      }
+
+      .btn {
+        background-color: rgb(15, 186, 238);
+        border: 0px solid;
+        border-radius: 40px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+      }
+
+      .content {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content__item {
+        text-decoration: none;
+      }
+
+      .labels {
+        text-transform: uppercase;
+        margin-left: -10px;
+      }
+
+      .color-grey {
+        color: grey;
+      }
+      
+      .list-custom-checkbox{
+        padding: 0;
+        margin:0;
+      }
+
+      .custom-checkbox {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        cursor: pointer;
+      }
+
+      .form-control {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        border-radius: 30%;
+        color: gray;
+      }
+
+      .checkmark:after {
+        content: '';
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 5px;
+        top: 2px;
+        width: 4px;
+        height: 8px;
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+        transform: rotate(40deg);
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .cyan {
+        background-color: cyan;
+      }
+
+      .green {
+        background-color: greenyellow;
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgb(0, 162, 255);
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn">Compose</button>
+      <ul class="content">
+        <li>
+          <a href="#" class="content__item" title="Inbox"
+            >Inbox<span class="color-grey">&nbsp;(2)</span></a
+          >
+        </li>
+        <li>
+          <a href="#" class="content__item" title="Important">Important</a>
+        </li>
+        <li><a href="#" class="content__item" title="Sent">Sent</a></li>
+        <li><a href="#" class="content__item" title="Drafts">Drafts</a></li>
+        <li><a href="#" class="content__item" title="Trash">Trash</a></li>
+      </ul>
+      <div class="labels color-grey">labels</div>
+      <ul class="list-custom-checkbox">
+        <li class="custom-checkbox">
+          <label for="personal">Personal</label>
+          <input type="checkbox" class="form-control" id="personal" />
+          <span class="checkmark orange"></span>
+        </li>
+        <li class="custom-checkbox">
+          <label for="work">Work</label>
+          <input type="checkbox" class="form-control" id="work" />
+          <span class="checkmark cyan"></span>
+        </li>
+        <li class="custom-checkbox">
+          <label for="travel">Travel</label>
+          <input type="checkbox" class="form-control" id="travel" />
+          <span class="checkmark green"></span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

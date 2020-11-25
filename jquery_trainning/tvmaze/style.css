@@ -1,0 +1,158 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.result-item {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.result-item .image-item, .content-img{
+  height: 295px;
+}
+
+.result-item .image-item:hover {
+  box-shadow: 0px 0px 10px gray;
+}
+
+.result-item .item-title:hover {
+  color: rgb(63, 155, 124);
+  text-decoration: underline;
+}
+
+.result-item .item-title {
+  position: absolute;
+  padding: 10px;
+  font-size: 2rem;
+  color: rgb(73, 192, 152);
+}
+
+.search {
+  margin-bottom: 2rem;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  display: inline-flex;
+  margin: 15px 0;
+  padding: 0;
+}
+.nav-menu .menu-item {
+  text-decoration: none;
+  padding: 10px 12px;
+  text-align: center;
+  color: #959595;
+  margin-right: 4px;
+  cursor: pointer;
+}
+.nav-menu .menu-item:hover {
+  background-color: rgb(122, 216, 185);
+  color: white;
+}
+
+.nav-menu .active {
+  background-color: #3f3f3f;
+  color: white !important;
+}
+.show-info {
+  width: 35%;
+  background-color: #f7f7f7;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  height: fit-content;
+  word-break: break-word;
+}
+
+.show-info .text{
+  font-weight: 100;
+  margin: 0;
+}
+
+.detail-list {
+  display: block;
+  margin: 6px 0;
+  width: 100%;
+  line-height: 1.6;
+}
+
+.show-information {
+  padding: 0 3rem;
+  margin: 0 auto;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.general {
+  width: 65%;
+}
+
+.image-field {
+  float: left;
+  margin-right: 1rem;
+}
+
+.show-description {
+  text-align: justify;
+  text-justify: inter-word;
+  width: 96%;
+  word-spacing: 2px;
+  letter-spacing: 0.5px;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.main-content{
+  display: inline-flex;
+}
+
+.detail-list div a, .crew-info a, .cast-info a{
+  color: rgb(73, 192, 152);
+  text-decoration: none;
+}
+
+.crew-info, .cast-info{
+  margin-left: 1rem;
+}
+
+.detail-list div a:hover, .crew-info a:hover, .cast-info a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rating-bar{
+  display: inline-block;
+}
+.star {
+  font-size: 25px;
+  color: #cccccc;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+.star:hover {
+  color: rgb(239, 255, 10);
+}
+
+.star-rating {
+  color: rgb(255, 115, 0);
+}
+
+
+.crew-item, .cast-item {
+    width: 50%;
+    display: inline-flex;
+    margin-bottom: 25px;
+}
+
+.gallery-img-container{
+  display: flex;
+}
+
+.gallery-img-container .gallery-item:not(:first-child){
+  margin-left: 1rem;
+}

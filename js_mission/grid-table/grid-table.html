@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="initTable()">
+    <div class="container">
+      <table class="customer-info-table">
+        <thead class="table-header">
+          <tr class="row row-header" id="row-header"></tr>
+          <tr class="row row-search" id="row-search"></tr>
+        </thead>
+        <tbody class="table-body" id="table-body"></tbody>
+      </table>
+      <div class="pagination">
+        <span>Pages:</span>
+        <span class="page-number" id="page-number"></span>
+        <span id="current-page"></span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

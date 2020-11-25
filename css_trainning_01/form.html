@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: darkgreen;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: rgba(255, 252, 248, 0.808);
+        padding: 30px 30px;
+        min-width: 150px;
+        max-width: 500px;
+      }
+
+      .title {
+        text-transform: capitalize;
+        color: green;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 0;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .note {
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.623);
+        border-left: 3px solid rgb(131, 204, 20);
+        border-radius: 5px;
+        height: auto;
+        box-shadow: 8px 8px 30px #cec7c7;
+      }
+
+      .note__welcome {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .note__more {
+        color: rgb(131, 204, 20);
+        font-size: 14px;
+        display: block;
+      }
+
+      .footer {
+        margin-top: 15px;
+      }
+
+      .btn {
+        margin-top: 15px;
+        width: 100%;
+        border-radius: 6px;
+        border: none;
+        padding: 10px 0px;
+        color: white;
+        font-weight: bold;
+        background-image: linear-gradient(to right, rgb(18, 223, 35), green);
+      }
+
+      .color-black {
+        margin-top: 15px;
+        color: black;
+      }
+
+      .form-group {
+        padding: 15px 0 0;
+        margin-top: 10px;
+        position: relative;
+      }
+
+      .form-control {
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid rgb(158, 157, 157);
+        border-width: 1.5px;
+        outline: none;
+        font-size: 16px;
+        color: #212121;
+        padding: 5px 0;
+        background: transparent;
+      }
+
+      .form-control::placeholder {
+        color: transparent;
+      }
+
+      .form-control:placeholder-shown ~ .form-label {
+        font-size: 16px;
+        cursor: text;
+        top: 20px;
+      }
+
+      .form-label,
+      .form-control:focus ~ .form-label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 12px;
+      }
+
+      .superscript {
+        text-transform: uppercase;
+        font-size: 8px;
+        padding: 2px 5px;
+        color: white;
+        background-color: red;
+        border-radius: 25px;
+        border: 1px solid white;
+      }
+
+      .subscript {
+        font-size: 16px;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .sign-on {
+        margin-top: 10px;
+      }
+
+      .center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="title center">
+          welcome to&nbsp;<span class="uppercase">boolfly</span>
+        </h3>
+        <p class="center">Xin chào các bạn sinh viên</p>
+        <div class="note">
+          <p class="note__welcome">
+            Chào các bạn đã đến công ty&nbsp;<span class="uppercase"
+              >boolfly</span
+            >
+          </p>
+          <a class="note__more center" href="#" title="Hiện thêm">Hiện thêm</a>
+        </div>
+      </div>
+      <form method="POST" class="body">
+        <div class="form-group">
+          <input
+            type="username"
+            class="form-control"
+            id="username"
+            placeholder="Tên đăng nhập"
+          />
+          <label class="form-label" for="username">Tên đăng nhập</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Mật khẩu"
+          />
+          <label class="form-label" for="password">Mật khẩu</label>
+        </div>
+        <button type="submit" class="btn center">Đăng nhập</button>
+      </form>
+      <div class="footer center">
+        <div class="forgot-password">
+          <a class="color-black" href="#" title="Quên mật khẩu"
+            >Quên mật khẩu?</a
+          >
+        </div>
+        <div class="sign-on">
+          <a class="color-black" href="#" title="Single Sign On"
+            ><sub class="subscript">Single Sign On</sub></a
+          >
+          <sup class="superscript">new</sup>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
