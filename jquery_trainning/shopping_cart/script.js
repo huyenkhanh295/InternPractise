@@ -6,7 +6,7 @@ var shopping = {
       price: 25.4,
       image:
         'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/66d8c25c-27cc-44ff-877e-35e5ce84a9c1/brasilia-jdi-backpack-QZMVk9.jpg',
-      inCart: 22,
+      inCart: 0,
     },
     {
       id: 2,
@@ -65,7 +65,8 @@ var shopping = {
       inCart: 0,
     },
   ],
-
+  max : 25,
+  
   init() {
     this.renderProduct();
     this.addEvent();
@@ -83,14 +84,19 @@ var shopping = {
       }
       localStorage.setItem('productInCart', JSON.stringify(productInCart));
     }else{
-      alert(localStorage.getItem('productInCart'));
-      
       let productList = JSON.parse(localStorage.getItem('productInCart'));
       console.log(productList);
       for(item of productList){
         index = this.getProductIndexById(parseInt(item.id));
         this.products[index].inCart = parseInt(item.inCart);
       }
+      let totalPrice = 0;
+      for(item of this.products){
+        if(item.inCart > 0){
+          totalPrice += item.inCart * item.price
+        }
+      }
+      this.loadCart(totalPrice); 
     }
   },
 
@@ -105,18 +111,29 @@ var shopping = {
     });
     $('.add-to-cart').click(function(){
       let item = shopping.getProduct($(this).attr('id'));
-      if(item.inCart < 20){
+      if(item.inCart == 0){
+        let productList = JSON.parse(localStorage.getItem('productInCart'));
+        console.log(productList);
+
+        productList.push({id: `${item.id}`, inCart: 1});
+        
+        localStorage.setItem('productInCart', JSON.stringify(productList));
+        shopping.products[`${item.id - 1}`].inCart = 1;
+      //ngay cho nay ko co tinh tien
+      
+
+        let total = parseFloat(localStorage.getItem('totalPrice')) + item.price ;
+        shopping.loadCart(total);
+        console.log(localStorage);
+
+      }else if(item.inCart < shopping.max){
+        shopping.changeProductQuantity($(this).attr('id'));
         // goi ham thay doi so luong cart
       }else{
+        alert('This product quantity is maximum!');
         // disable cái button 
       }
     })
-    // // let quantityInput = $("input[type|='text']");
-    // $('input').keydown(function(event){
-    //   if(isNaN(parseInt(event.key))) //|| quantityInput.val().chartAt(0) == "0"){
-    //     alert('Please enter a valid number!')
-    //   }
-    // )
   },
 
   renderProduct() {
@@ -125,17 +142,16 @@ var shopping = {
         divProdImage = $('<div></div>').addClass('product-img'),
         imgProdImage = $('<img>').attr({
           src: `${item.image}`,
-          alt: `${item.name}`,
-          id: `${item.id}`
+          alt: `${item.name}`          
         }),
-        btnAddToCart = $('<button></button>').text('Add To Cart').addClass('add-to-cart'),
+        btnAddToCart = $('<button></button>').text('Add To Cart').addClass('add-to-cart').attr('id', `${item.id}`),
         divProdInfo = $('<div></div>').addClass('product-info'),
         h3ProdName = $('<h3></h3>')
           .addClass('product-name')
           .text(`${item.name}`),
         pProdPrice = $('<p></p>')
           .addClass('product-price')
-          .text(`$${item.price}`);
+          .text(`$${item.price.toFixed(2)}`);
 
       $('.product-list').append(
         divProdItem
@@ -146,21 +162,61 @@ var shopping = {
     }
   },
 
+  changeProductQuantity(id, quantity = 1){
+    let item = this.getProduct(id),
+    totalPrice = localStorage.getItem('totalPrice');
+
+    total = parseFloat(totalPrice) + item.price * quantity;
+    item.inCart += quantity;
+    if(item.inCart == 0){
+      // bo product ra localStorage
+      let productList = JSON.parse(localStorage.getItem('productInCart'));
+      for(let i =0; i<productList.length;i++){
+        if(productList[i].id == id){
+          productList.splice(i,1);
+          console.log(productList);
+          localStorage.setItem('productInCart', JSON.stringify(productList));
+          break;
+        }
+      }
+      console.log(localStorage.getItem('productInCart'));
+    }
+    this.products[id -1].inCart = item.inCart;
+    
+    this.loadCart(total.toFixed(2));
+  },
+
+  loadCart(totalPrice=0){
+    console.log('local price' + localStorage.getItem('totalPrice'));
+    localStorage.setItem('totalPrice', totalPrice);
+    let countCart= JSON.parse(localStorage.getItem('productInCart')).length;
+    localStorage.setItem('countCart', countCart);
+    let count = $('.count-cart');
+    count.empty();
+    if(localStorage.getItem('countCart') > 100){
+      count.text('99+');
+    }else{
+      count.text(localStorage.getItem('countCart'));
+    }
+    this.renderCart();
+  },
+
   renderCart() {
+    $(".product-in-cart").empty();
     for (item of this.products) {
       if (item.inCart > 0) {
         let row = $('<tr></tr>'),
           colName = $('<td></td>').text(`${item.name}`),
           colImg = $('<td></td>'),
-          prodImg = $('<img>').attr('src', `${item.image}`),
-          colPrice = $('<td></td').text(`$${item.price}`),
+          prodImg = $('<img>').attr({src: `${item.image}`}),
+          colPrice = $('<td></td').text(`$${item.price.toFixed(2)}`),
           colQuantity = $('<td></td>'),
-          colTotal = $('<td></td>').text(`$${item.inCart*item.price}`),
+          colTotal = $('<td></td>').text(`$${(item.inCart*item.price).toFixed(2)}`),
           inputQuantity = $('<input>').attr({type: 'number', value: `${item.inCart}`, min: '1'}),
-          btnIncrease = $('<button></button>').text('+').addClass('btn btn-increase'),
-          btnDecrease = $('<button></button>').text('-').addClass('btn btn-decrease');
-          colDelete = $('<td></td>');
-          btnDelete = $('<button></button>').text('x').addClass('btn btn-delete');
+          btnIncrease = $('<button></button>').text('+').addClass('btn btn-increase').attr('id', `${item.id}`),
+          btnDecrease = $('<button></button>').text('-').addClass('btn btn-decrease').attr('id', `${item.id}`),
+          colDelete = $('<td></td>'),
+          btnDelete = $('<button></button>').text('x').addClass('btn btn-delete').attr('id', `${item.id}`);
         $('.product-in-cart').append(
           row
             .append(colName)
@@ -172,9 +228,35 @@ var shopping = {
         );
       }
     }
+    $('.total-price').text('$' + parseFloat(localStorage.getItem('totalPrice')).toFixed(2) );
+    this.addEventToCard();
   },
 
-  updateCart() {},
+  addEventToCard(){
+    $('.btn-decrease').click(function(){
+      let product = shopping.getProduct($(this).attr('id'));
+      if (product.inCart > 1){
+        shopping.changeProductQuantity($(this).attr('id'), -1);
+        // shopping.renderCart();
+      }      
+    });
+    $('.btn-increase').click(function(){
+      let product = shopping.getProduct($(this).attr('id'));
+      if (product.inCart < shopping.max){
+        shopping.changeProductQuantity($(this).attr('id'));
+        // shopping.renderCart();
+      }else{
+        alert('product quantity is maximum~');
+      }      
+    });
+    $('.btn-delete').click(function(){
+      if(confirm('Do you want to delete this item?')){
+        let product = shopping.getProduct($(this).attr('id'));
+        shopping.changeProductQuantity($(this).attr('id'), -(product.inCart))
+        // shopping.renderCart();
+      }  
+    });
+  },
 
   getProduct(id){
     for(item of this.products)
